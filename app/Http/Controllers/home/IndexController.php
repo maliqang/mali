@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Cookie;
 
 class IndexController extends BaseController{
     public function index(){
-        $f=Cookie::make("f",50);
+        $f=Cookie::make("f",80);
         return response()->make()->withCookie($f);
     }
 
