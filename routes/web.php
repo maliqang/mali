@@ -16,5 +16,18 @@ Route::get('/',"home\IndexController@index");
 Route::get('/test','home\IndexController@test');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->name("admin.")->middleware('auth')->group(function (){
+    Route::get('/index','Admin\IndexController@index')->name("index");
+    Route::get("/welcome","Admin\ConfigController@welcome")->name("welcome");
+    Route::get("/config",'Admin\ConfigController@index')->name("config");
+    Route::post("/config/update","Admin\ConfigController@update")->name("config.update");
+    Route::get('/lang','Admin\ConfigController@lang')->name('lang');
+    Route::get("/template",'Admin\TemplateController@index')->name('template');
+    Route::get("/template/create_html",'Admin\TemplateController@createHtml')->name('template.create_html');
+    Route::get("/template/css",'Admin\TemplateController@cssList')->name('template.css');
+    Route::get("/template/js",'Admin\TemplateController@jsList')->name('template.js');
+    Route::post("/template/store",'Admin\TemplateController@store')->name('template.store');
+
+
+});

@@ -20,5 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        'admin/*',                          #排除后台CSRF保护
     ];
 }

@@ -15,15 +15,14 @@
 // | purpose:
 // +----------------------------------------------------------------------
 namespace App\Http\Controllers\home;
-use Illuminate\Support\Facades\Cookie;
+
+
+use Illuminate\Support\Facades\File;
 
 class IndexController extends BaseController{
     public function index(){
-        $f=Cookie::make("f",80);
-        return response()->make()->withCookie($f);
+
     }
 
-    public function test(){
-        echo Cookie::get("f");
-    }
+
 }
