@@ -28,8 +28,8 @@ class TemplateTable extends Migration
     public function up()
     {
         Schema::create('templates',function (Blueprint $table){
-
             $table->bigIncrements('id');
+            $table->timestamps();
             $table->string('name',60)->comment('名称');
             $table->smallInteger('class',false,true)->nullable()->comment('类型');
             $table->smallInteger('model',false,true)->nullable()->comment("模型");

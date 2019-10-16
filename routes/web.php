@@ -27,7 +27,7 @@ Route::prefix('admin')->name("admin.")->middleware('auth')->group(function (){
     Route::get("/template/create_html",'Admin\TemplateController@createHtml')->name('template.create_html');
     Route::get("/template/css",'Admin\TemplateController@cssList')->name('template.css');
     Route::get("/template/js",'Admin\TemplateController@jsList')->name('template.js');
-    Route::post("/template/store",'Admin\TemplateController@store')->name('template.store');
+    Route::post("/template/store_html",'Admin\TemplateController@storeHtml')->name('template.store.html');
 
 
 });

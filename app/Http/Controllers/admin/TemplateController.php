@@ -16,6 +16,7 @@
 // +----------------------------------------------------------------------
 namespace App\Http\Controllers\Admin;
 
+use App\model\Templates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -49,12 +50,13 @@ class TemplateController extends AdminController
     }
 
 
-    public function store(Request $request){
+    // 保存模板
+    public function storeHtml(Request $request,Templates $templates){
         $template_path=$this->getTemplatePath($request->post('public'),$request->post('model'),$request->post('class'),$request->post('theme'));
         //完整模板目录
         $template_intact_path=resource_path("views/".$template_path);
         if ($request->hasFile('file')){
-            $template_name=$request->file->getClientOriginalName();
+            $template_name=explode(".",$request->file->getClientOriginalName())[0];
             if(is_file($template_intact_path."/".$template_name)){
                 return redirect(route('admin.template.create_html'))->with('status_file', '模板文件已存');
             }
@@ -72,8 +74,8 @@ class TemplateController extends AdminController
                     'name.regex'=>'模板名称不正确',
                 ]
             );
-            $template_name=$validatedData['name'].".blade".".php";
-            $template_path_name=$template_path."/".$template_name;
+            $template_name=$validatedData['name'];
+            $template_path_name=$template_path."/".$template_name.".blade".".php";
 
              if(!is_dir($template_intact_path)){
                 File::makeDirectory($template_intact_path,777,true);
@@ -86,12 +88,18 @@ class TemplateController extends AdminController
             File::put($template_intact_path_name,"");
         }
 
-        $template=$request->post();
-        $template['name']=$template_name;
-        $template['lang']=$this->admin_lang;
-        $template['type']=1;
-        $template['path']=$template_path;
-        dd($template);
+        $templates['model']=$request->post('model');
+        $templates['class']=$request->post('class');
+        $templates['remark']=$request->post('remark');
+        $templates['theme']=$request->post('theme');
+        $templates['name']=$template_name;
+        $templates['lang']=$this->admin_lang;
+        $templates['type']=1;
+        $templates['path']=$template_path."/".$template_name.".blade.php";
+        if($templates->save()){
+            return response()->redirectTo(route('admin.template'));
+        }
+
 
     }
 }

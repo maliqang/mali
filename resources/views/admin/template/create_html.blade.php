@@ -1,7 +1,7 @@
 @extends('admin.public.base')
 @section('body')
     <div class="page-container">
-        <form class="form form-horizontal mt-50" method="post" enctype="multipart/form-data" action="{{route('admin.template.store')}}" >
+        <form class="form form-horizontal mt-50" method="post" enctype="multipart/form-data" action="{{route('admin.template.store_html')}}" >
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">主题：</label>
                 <div class="formControls col-xs-8 col-sm-4">
