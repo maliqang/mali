@@ -20,5 +20,34 @@ use Illuminate\Database\Eloquent\Model;
 
 class Templates extends Model
 {
+    /**获取模型
+     * @param $value
+     * @return mixed
+     */
+    public function  getModelAttribute($value){
+        $model=[
+            0=>"",
+            1=>"文章",
+            2=>"产品",
+            3=>"图片",
+            4=>"视频",
+            5=>"单页",
+            6=>"模块",
+        ];
+
+        return $model[$value];
+    }
+
+
+    public function getClassAttribute($value){
+        $data=[
+            0=>"",
+            1=>"列表",
+            2=>"详情",
+            3=>"频道",
+        ];
+
+        return $data[$value];
+    }
 
 }

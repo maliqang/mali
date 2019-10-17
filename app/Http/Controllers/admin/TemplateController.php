@@ -19,6 +19,7 @@ namespace App\Http\Controllers\Admin;
 use App\model\Templates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use PhpMyAdmin\Response;
 
 
 class TemplateController extends AdminController
@@ -28,17 +29,30 @@ class TemplateController extends AdminController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Templates $templatesModel)
     {
 
-        return view('admin.template.index');
+        $template=$templatesModel->where(['lang'=>$this->admin_lang,'type'=>1])->get();
+
+        return response()->view('admin.template.index',['template'=>$template]);
     }
 
     /**创建HTML模板表单
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function createHtml(){
-        return view('admin.template.create_html');
+        return response()->view('admin.template.create_html');
+    }
+
+    /**编辑HTML模板表单
+     * @return \Illuminate\Http\Response
+     */
+    public function editHtml(Request $request,Templates $templatesModel){
+        $id=$request->get('id');
+        $template=$templatesModel->find($id);
+        $path=resource_path('views/'.$template->path);
+        $html=File::get($path);
+        return response()->view('admin.template.edit_html',['template'=>$template,'html'=>$html]);
     }
 
     public function cssList(){
@@ -50,8 +64,12 @@ class TemplateController extends AdminController
     }
 
 
-    // 保存模板
-    public function storeHtml(Request $request,Templates $templates){
+    /**保存HTML模板
+     * @param Request $request
+     * @param Templates $templatesModel
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function storeHtml(Request $request,Templates $templatesModel){
         $template_path=$this->getTemplatePath($request->post('public'),$request->post('model'),$request->post('class'),$request->post('theme'));
         //完整模板目录
         $template_intact_path=resource_path("views/".$template_path);
@@ -88,18 +106,33 @@ class TemplateController extends AdminController
             File::put($template_intact_path_name,"");
         }
 
-        $templates['model']=$request->post('model');
-        $templates['class']=$request->post('class');
-        $templates['remark']=$request->post('remark');
-        $templates['theme']=$request->post('theme');
-        $templates['name']=$template_name;
-        $templates['lang']=$this->admin_lang;
-        $templates['type']=1;
-        $templates['path']=$template_path."/".$template_name.".blade.php";
-        if($templates->save()){
+        $templatesModel['model']=$request->post('model');
+        $templatesModel['class']=$request->post('class');
+        $templatesModel['remark']=$request->post('remark');
+        $templatesModel['theme']=$request->post('theme');
+        $templatesModel['name']=$template_name;
+        $templatesModel['lang']=$this->admin_lang;
+        $templatesModel['type']=1;
+        $templatesModel['path']=$template_path."/".$template_name.".blade.php";
+        if($templatesModel->save()){
             return response()->redirectTo(route('admin.template'));
         }
 
 
+    }
+
+    /**更新文件内容
+     * @param Request $request
+     * @param Templates $templatesModel
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function updateFile(Request $request,Templates $templatesModel){
+        $id=$request->get('id');
+        $html=$request->post('html');
+        $template=$templatesModel->find($id);
+        $path=resource_path('views/'.$template->path);
+        File::put($path,$html);
+        $templatesModel->where(['id'=>$id])->update(['remark'=>$request->post('remark')]);
+        return response()->redirectToRoute('admin.template');
     }
 }

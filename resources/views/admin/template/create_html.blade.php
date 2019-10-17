@@ -1,7 +1,7 @@
 @extends('admin.public.base')
 @section('body')
     <div class="page-container">
-        <form class="form form-horizontal mt-50" method="post" enctype="multipart/form-data" action="{{route('admin.template.store_html')}}" >
+        <form class="form form-horizontal mt-50" method="post" enctype="multipart/form-data" action="{{route('admin.template.store.html')}}" >
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">主题：</label>
                 <div class="formControls col-xs-8 col-sm-4">
@@ -20,6 +20,7 @@
                 <label class="form-label col-xs-4 col-sm-2">模型：</label>
                 <div class="formControls col-xs-8 col-sm-4 size-L">
                     <select class="select" size="1" name="model">
+                        <option value="0"></option>
                         <option value="1">文章</option>
                         <option value="2">产品</option>
                         <option value="3">图片</option>
@@ -33,6 +34,7 @@
                 <label class="form-label col-xs-4 col-sm-2">类型：</label>
                 <div class="formControls col-xs-8 col-sm-4 size-L">
                     <select class="select size-L" size="1" name="class">
+                        <option value="0"></option>
                         <option value="1">列表</option>
                         <option value="2">详情</option>
                         <option value="3">频道</option>

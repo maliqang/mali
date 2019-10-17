@@ -64,4 +64,18 @@ $(function(){
         }
     })
 
+
+
 });
+
+
+//创建新窗口
+function create(title,url) {
+    var index = layer.open({
+        type: 2,
+        title:false,
+        closeBtn:false,
+        content: url
+    });
+    layer.full(index);
+}

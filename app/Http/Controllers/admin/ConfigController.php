@@ -44,16 +44,16 @@ class ConfigController extends AdminController
 
         //LOGO 上传
         if ($request->hasFile('logo')) {
-            $logoPath = $request->file("logo")->store('system', "public");
-            $configs->where(['key' => 'logo'])->update(['value' => "/" . $logoPath]);
+            $logo_path = $request->file("logo")->store('system', "public");
+            $configs->where(['key' => 'logo'])->update(['value' => "/" . $logo_path]);
 
         }
 
 
         // 公从号上传
         if ($request->hasFile('wechat')) {
-            $wechatPath = $request->file("wechat")->store('system', "public");
-            $configs->where(['key' => 'wechat'])->update(['value' => "/" . $wechatPath]);
+            $wechat_path = $request->file("wechat")->store('system', "public");
+            $configs->where(['key' => 'wechat'])->update(['value' => "/" . $wechat_path]);
         }
 
         return response()->redirectTo(route('admin.welcome'));
@@ -64,8 +64,8 @@ class ConfigController extends AdminController
      */
     public function lang(Request $request){
         $lang= $request->get('lang');
-        $dd=Cookie::forever('lang', $lang);
-        return response()->redirectTo(route('admin.welcome'))->cookie($dd);
+        $lang_cookie=Cookie::forever('lang', $lang);
+        return response()->redirectTo(route('admin.welcome'))->cookie($lang_cookie);
     }
 
     /**欢迎页面

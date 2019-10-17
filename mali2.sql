@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80012
 File Encoding         : 65001
 
-Date: 2019-10-12 17:49:13
+Date: 2019-10-17 17:16:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,32 +75,32 @@ CREATE TABLE `ms_configs` (
 -- ----------------------------
 INSERT INTO `ms_configs` VALUES ('10', '2019-10-11 03:21:50', '2019-10-11 03:21:50', 'email', '邮箱', 'liao@seals-ins.com', null, '1', 'system', 'cn');
 INSERT INTO `ms_configs` VALUES ('9', '2019-10-11 03:21:50', '2019-10-11 03:59:02', 'wechat', '公众号', '/system/hBJ0aSwwjbsKg4QE4xOSutmFD0Q0c4AM3N04Iefx.jpeg', null, '3', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('8', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'qq', 'QQ', '2391656270', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('7', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'address', '地址', '深圳市光明新区公明北环大道世峰工业园B栋', null, '2', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('5', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'phone', '座机', '400-168-1023', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('6', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'mobile', '手机', '13123705900', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('4', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_description', '描述', '关于希立仪器设备有限公司', null, '2', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('3', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_keywords', '关键词', '气密性检测仪', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('2', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_title', '网站标题', '希立仪器设备有限公司', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('1', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_name', '网站名称', '希立仪器', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('11', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'website', '官网', 'www.seals-ins.com', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('12', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'case_number', '备案号', '粤ICP备18027543号-1', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('8', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'qq', 'QQ', '2391656270', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('7', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'address', '地址', '深圳市光明新区公明北环大道世峰工业园B栋', null, '2', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('5', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'phone', '座机', '400-168-1023', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('6', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'mobile', '手机', '13123705900', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('4', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_description', '描述', '关于希立仪器设备有限公司', null, '2', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('3', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_keywords', '关键词', '气密性检测仪', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('2', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_title', '网站标题', '希立仪器设备有限公司', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('1', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_name', '网站名称', '希立仪器', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('11', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'website', '官网', 'www.seals-ins.com', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('12', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'case_number', '备案号', '粤ICP备18027543号', null, '1', 'system', 'cn');
 INSERT INTO `ms_configs` VALUES ('13', '2019-10-11 03:21:50', '2019-10-11 03:58:52', 'logo', 'LOGO', '/system/1sjfS7Li1jeA6eWIPLkRfj9piBzNw7Lp7JD95ALF.png', null, '3', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('14', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'copyright', '版权', '流年如梦', null, '1', 'system', 'cn');
-INSERT INTO `ms_configs` VALUES ('15', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_name', '网站名称', '希立仪器', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('16', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_title', '网站标题', '希立仪器设备有限公司', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('17', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_keywords', '关键词', '气密性检测仪', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('18', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'site_description', '描述', '关于希立仪器设备有限公司', null, '2', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('19', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'phone', '座机', '400-168-1023', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('20', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'mobile', '手机', '13123705900', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('21', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'address', '地址', '深圳市光明新区公明北环大道世峰工业园B栋', null, '2', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('22', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'qq', 'QQ', '2391656270', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('14', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'copyright', '版权', '流年如梦', null, '1', 'system', 'cn');
+INSERT INTO `ms_configs` VALUES ('15', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_name', '网站名称', '希立仪器', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('16', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_title', '网站标题', '希立仪器设备有限公司', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('17', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_keywords', '关键词', '气密性检测仪', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('18', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'site_description', '描述', '关于希立仪器设备有限公司', null, '2', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('19', '2019-10-11 03:21:50', '2019-10-16 08:33:50', 'phone', '座机', '400-168-1023', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('20', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'mobile', '手机', '13123705900', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('21', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'address', '地址', '深圳市光明新区公明北环大道世峰工业园B栋', null, '2', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('22', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'qq', 'QQ', '2391656270', null, '1', 'system', 'en');
 INSERT INTO `ms_configs` VALUES ('23', '2019-10-11 03:21:50', '2019-10-11 03:59:02', 'wechat', '公众号', '/system/hBJ0aSwwjbsKg4QE4xOSutmFD0Q0c4AM3N04Iefx.jpeg', null, '3', 'system', 'en');
 INSERT INTO `ms_configs` VALUES ('24', '2019-10-11 03:21:50', '2019-10-11 03:21:50', 'email', '邮箱', 'liao@seals-ins.com', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('25', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'website', '官网', 'www.seals-ins.com', null, '1', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('26', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'case_number', '备案号', '粤ICP备18027543号-1', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('25', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'website', '官网', 'www.seals-ins.com', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('26', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'case_number', '备案号', '粤ICP备18027543号', null, '1', 'system', 'en');
 INSERT INTO `ms_configs` VALUES ('27', '2019-10-11 03:21:50', '2019-10-11 03:58:52', 'logo', 'LOGO', '/system/1sjfS7Li1jeA6eWIPLkRfj9piBzNw7Lp7JD95ALF.png', null, '3', 'system', 'en');
-INSERT INTO `ms_configs` VALUES ('28', '2019-10-11 03:21:50', '2019-10-11 07:41:32', 'copyright', '版权', '流年如梦', null, '1', 'system', 'en');
+INSERT INTO `ms_configs` VALUES ('28', '2019-10-11 03:21:50', '2019-10-16 08:33:51', 'copyright', '版权', '流年如梦', null, '1', 'system', 'en');
 
 -- ----------------------------
 -- Table structure for ms_failed_jobs
@@ -170,12 +170,18 @@ CREATE TABLE `ms_templates` (
   `path` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '路径',
   `remark` text COLLATE utf8mb4_unicode_ci COMMENT '备注',
   `lang` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT 'en' COMMENT '语言',
+  `updated_at` timestamp NULL DEFAULT NULL COMMENT '更新时间',
+  `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of ms_templates
 -- ----------------------------
+INSERT INTO `ms_templates` VALUES ('1', 'list', '1', '1', '1', 'default', 'home/default/cn/article/list/list.blade.php', '默认文章列表-测试', 'cn', '2019-10-17 17:08:31', '2019-10-16 17:43:09');
+INSERT INTO `ms_templates` VALUES ('2', 'list', '1', '2', '1', 'default', 'home/default/cn/product/list/list.blade.php', '默认产品列表', 'cn', '2019-10-17 13:45:26', '2019-10-17 13:45:26');
+INSERT INTO `ms_templates` VALUES ('3', 'about_us', '0', '5', '1', 'default', 'home/default/cn/single/about_us.blade.php', '关于我们', 'cn', '2019-10-17 17:15:18', '2019-10-17 13:46:40');
+INSERT INTO `ms_templates` VALUES ('4', 'contact_us', '0', '5', '1', 'default', 'home/default/cn/single/contact_us.blade.php', '联系我们', 'cn', '2019-10-17 17:12:44', '2019-10-17 13:50:15');
 
 -- ----------------------------
 -- Table structure for ms_users

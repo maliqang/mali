@@ -23,45 +23,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <{foreach $template_list as $v}>
+                 @foreach($template as $v)
                 <tr class="text-c">
                     <th width="40"><input name=""  type="checkbox" value=""></th>
-                    <th><{$v.theme}></th>
-                    <th><{$v.model}></th>
-                    <th><{$v.class}></th>
-                    <th><{$v.name}></th>
-                    <th><{$v.update_time|date="Y-m-d  H:i:s"}></th>
-                    <th width="100"><i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="edit('编辑模板','<{:url("admin/template/edit",['id'=>$v.id])}>')"></i></th>
-                    <th class="text-l"><{$v.remark|subtext=30}></th>
+                    <th>{{$v->theme}}</th>
+                    <th>{{$v->model}}</th>
+                    <th>{{$v->class}}</th>
+                    <th>{{$v->name}}</th>
+                    <th>{{$v->updated_at}}</th>
+                    <th width="100"><i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="create('编辑模板','{{route('admin.template.edit_html',['id'=>$v->id])}}')"></i></th>
+                    <th class="text-l">{{$v->remark}}</th>
                 </tr>
-                <{/foreach}>
+                @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
-
-
-    <script type="text/javascript">
-
-        function create(title,url) {
-            var index = layer.open({
-                type: 2,
-                title:false,
-                closeBtn:false,
-                content: url
-            });
-            layer.full(index);
-        }
-        function edit(title,url) {
-            var index = layer.open({
-                type: 2,
-                title:false,
-                closeBtn:false,
-                content: url
-            });
-            layer.full(index);
-        }
-    </script>
-
 @endsection

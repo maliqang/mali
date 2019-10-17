@@ -18,9 +18,9 @@
     <script type="text/javascript" src="/node_modules/H-ui/lib/layer/2.4/layer.js"></script>
     <script type="text/javascript" src="/node_modules/H-ui/static/h-ui/js/H-ui.min.js"></script>
     <script type="text/javascript" src="/node_modules/H-ui/static/h-ui.admin/js/H-ui.admin.js"></script>
-    <script type="text/javascript" src="/js/admin_public.js" ></script>
     <script type="text/javascript" src="/node_modules/H-ui/lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="/node_modules/H-ui/lib/laypage/1.2/laypage.js"></script>
+    <script type="text/javascript" src="/js/admin_public.js" ></script>
     <title>mali v1</title>
 </head>
 <body>
