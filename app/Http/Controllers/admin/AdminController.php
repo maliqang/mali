@@ -35,6 +35,7 @@ class AdminController extends Controller
      */
     protected function getTemplatePath($public,$model=null,$class=null,$theme='default',$module="home"){
         $model_list=[
+            0=>"",
             1=>'article',
             2=>'product',
             3=>'image',
@@ -43,6 +44,7 @@ class AdminController extends Controller
             6=>"module",
         ];
         $class_list=[
+            0=>"",
             1=>"list",
             2=>"details",
             3=>"channel",

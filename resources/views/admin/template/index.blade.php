@@ -6,7 +6,7 @@
     </nav>
     <div class="page-container ">
         <div class="cl">
-            <a class="btn btn-success " onclick="create('增加模板','{{route('admin.template.create_html')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>增加模板</a>
+            <a class="btn btn-default" onclick="create('增加模板','{{route('admin.template.create_html')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>增加模板</a>
         </div>
         <div class="mt-20" >
             <table   class="table table-border table-bordered table-bg table-hover table-sort">

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80012
 File Encoding         : 65001
 
-Date: 2019-10-17 17:16:08
+Date: 2019-10-18 18:08:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -173,15 +173,16 @@ CREATE TABLE `ms_templates` (
   `updated_at` timestamp NULL DEFAULT NULL COMMENT '更新时间',
   `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of ms_templates
 -- ----------------------------
-INSERT INTO `ms_templates` VALUES ('1', 'list', '1', '1', '1', 'default', 'home/default/cn/article/list/list.blade.php', '默认文章列表-测试', 'cn', '2019-10-17 17:08:31', '2019-10-16 17:43:09');
+INSERT INTO `ms_templates` VALUES ('1', 'list', '1', '1', '1', 'default', 'home/default/cn/article/list/list.blade.php', '默认文章列表-测试', 'cn', '2019-10-18 15:44:15', '2019-10-16 17:43:09');
 INSERT INTO `ms_templates` VALUES ('2', 'list', '1', '2', '1', 'default', 'home/default/cn/product/list/list.blade.php', '默认产品列表', 'cn', '2019-10-17 13:45:26', '2019-10-17 13:45:26');
 INSERT INTO `ms_templates` VALUES ('3', 'about_us', '0', '5', '1', 'default', 'home/default/cn/single/about_us.blade.php', '关于我们', 'cn', '2019-10-17 17:15:18', '2019-10-17 13:46:40');
 INSERT INTO `ms_templates` VALUES ('4', 'contact_us', '0', '5', '1', 'default', 'home/default/cn/single/contact_us.blade.php', '联系我们', 'cn', '2019-10-17 17:12:44', '2019-10-17 13:50:15');
+INSERT INTO `ms_templates` VALUES ('5', 'list', '1', '3', '1', 'default', 'home/default/cn/image/list/list.blade.php', '默认图片列表', 'cn', '2019-10-18 17:05:11', '2019-10-18 17:05:11');
 
 -- ----------------------------
 -- Table structure for ms_users

@@ -48,7 +48,7 @@
                 <div class="formControls col-xs-8 col-sm-4">
                     <span class="btn-upload form-group">
                         <input class="input-text upload-url " type="text" name="uploadfile"  readonly>
-                        <a href="javascript:void();" class="btn btn-success "><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
+                        <a href="javascript:void();" class="btn btn-default"><i class="Hui-iconfont">&#xe642;</i> 浏览文件</a>
                         <input type="file" multiple name="file" class="input-file">
                     </span>
                 </div>

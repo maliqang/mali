@@ -104,7 +104,7 @@
                                 <img style="max-height: 100px; background: #ffffff; display: block" id="logo" src="{{$config['logo']}}">
                                 <span class="btn-upload">
                                 <input class="input-text" style="display: none" type="text"  readonly="">
-                                 <a href="javascript:void();" style="width: 100px" class="btn btn-success"><i class="Hui-iconfont"></i> 浏览文件</a>
+                                 <a href="javascript:void();" style="width: 100px" class="btn btn-default"><i class="Hui-iconfont"></i> 浏览文件</a>
                                  <input type="file" multiple="" id="logo1" name="logo" value="" class="input-file ">
                                 </span>
                             </div>
@@ -115,7 +115,7 @@
                                 <img style="max-height: 100px; background: #ffffff; display: block" id="wechat" src="{{$config['wechat']}}">
                                 <span class="btn-upload">
                                 <input class="input-text" style="display: none" type="text"  readonly="">
-                                 <a href="javascript:void();" style="width: 100px" class="btn btn-success"><i class="Hui-iconfont"></i> 浏览文件</a>
+                                 <a href="javascript:void();" style="width: 100px" class="btn btn-default"><i class="Hui-iconfont"></i> 浏览文件</a>
                                 <input type="file" multiple="" id="wechat1" name="wechat" value="" class="input-file ">
                                 </span>
                             </div>
