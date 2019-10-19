@@ -79,3 +79,25 @@ function create(title,url) {
     });
     layer.full(index);
 }
+//删除
+function destroy(obj,url) {
+    layer.confirm('确认要删除吗？', function (index) {
+        $.ajax({
+            type: 'get',
+            url:url ,
+            dataType: 'json',
+            success: function (data) {
+                if(data.status==1){
+                    $(obj).parents("tr").remove();
+                    layer.msg(data.result, {icon: 1, time: 1000});
+                }else {
+                    layer.msg(data.result, {icon: 1, time: 1000});
+
+                }
+            },
+            error: function (data) {
+                console.log(data.msg);
+            },
+        });
+    });
+}

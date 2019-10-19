@@ -1,11 +1,11 @@
 @extends('admin.public.base')
 @section('body')
     <nav class="breadcrumb">
-        <span class="c-cream">模板管理<span class="c-cream ">>CSS样式列表</span></span>
+        <span class="c-cream">模板管理<span class="c-cream ">>JS文件列表</span></span>
     </nav>
     <div class="page-container ">
         <div class="cl">
-            <a class="btn btn-default" onclick="create('增加样式','{{route('admin.template.create_css')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>增加样式</a>
+            <a class="btn btn-default" onclick="create('增加JS文件','{{route('admin.template.create_js')}}')" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>增加JS文件</a>
         </div>
         <div class="mt-20" >
             <table   class="table table-border table-bordered table-bg table-hover table-sort">
@@ -27,7 +27,7 @@
                         <th>{{$v->name}}</th>
                         <th>{{$v->updated_at}}</th>
                         <th width="100">
-                            <i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="create('编辑样式','{{route('admin.template.edit_css',['id'=>$v->id])}}')"></i>
+                            <i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="create('编辑JS文件','{{route('admin.template.edit_js',['id'=>$v->id])}}')"></i>
                             <i class="Hui-iconfont Hui-iconfont-del2" onclick="destroy(this,'{{route('admin.template.destroy',['id'=>$v->id])}}')"></i>
                         </th>
                         <th class="text-l">{{$v->remark}}</th>
@@ -37,6 +37,4 @@
             </table>
         </div>
     </div>
-
-
 @endsection

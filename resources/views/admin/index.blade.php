@@ -123,7 +123,7 @@
                 </dd>
             </dl>
             <dl id="menu-admin">
-                <dt><i class="Hui-iconfont">&#xe62d;</i> 模板管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dt><i class="Hui-iconfont Hui-iconfont-moban-2"></i> 模板管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
                 <dd>
                     <ul>
                         <li><a data-href="{{route('admin.template')}}" data-title="模板列表" href="javascript:void(0)">模板列表</a></li>

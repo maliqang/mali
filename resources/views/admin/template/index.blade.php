@@ -31,7 +31,10 @@
                     <th>{{$v->class}}</th>
                     <th>{{$v->name}}</th>
                     <th>{{$v->updated_at}}</th>
-                    <th width="100"><i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="create('编辑模板','{{route('admin.template.edit_html',['id'=>$v->id])}}')"></i></th>
+                    <th width="100">
+                        <i class=" Hui-iconfont Hui-iconfont-edit2 " onclick="create('编辑模板','{{route('admin.template.edit_html',['id'=>$v->id])}}')"></i>
+                        <i class="Hui-iconfont Hui-iconfont-del2" onclick="destroy(this,'{{route('admin.template.destroy',['id'=>$v->id])}}')"></i>
+                    </th>
                     <th class="text-l">{{$v->remark}}</th>
                 </tr>
                 @endforeach
@@ -39,4 +42,6 @@
             </table>
         </div>
     </div>
+
+
 @endsection

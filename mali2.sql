@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 80012
 File Encoding         : 65001
 
-Date: 2019-10-18 18:08:03
+Date: 2019-10-19 16:05:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,11 +24,11 @@ CREATE TABLE `ms_columns` (
   `pid` smallint(5) unsigned DEFAULT '0' COMMENT '父ID',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '名称',
-  `title` varchar(140) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
-  `keywoeds` varchar(160) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '关键词',
-  `description` varchar(240) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '描述',
-  `url` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '超连接',
+  `name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '名称',
+  `title` varchar(140) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '标题',
+  `keywoeds` varchar(160) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '关键词',
+  `description` varchar(240) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '描述',
+  `url` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '超连接',
   `status` smallint(5) unsigned DEFAULT '0' COMMENT '状态 0审核 1通过',
   `position` smallint(5) unsigned DEFAULT '1' COMMENT '位置',
   `sort` smallint(5) unsigned DEFAULT '1' COMMENT '排序',
@@ -40,11 +40,11 @@ CREATE TABLE `ms_columns` (
   `single_template_id` smallint(5) unsigned DEFAULT NULL COMMENT '单页模板ID',
   `page` smallint(5) unsigned NOT NULL DEFAULT '12' COMMENT '分页',
   `priority` double(3,2) unsigned NOT NULL DEFAULT '0.80' COMMENT '权重',
-  `rel` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `atl` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '图片',
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内容',
-  `lang` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cn' COMMENT '语言',
+  `rel` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `atl` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '图片',
+  `content` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '内容',
+  `lang` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cn' COMMENT '语言',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -66,7 +66,7 @@ CREATE TABLE `ms_configs` (
   `remarks` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '备注',
   `style` smallint(5) unsigned DEFAULT NULL COMMENT '样式-文本、文本域、图片、布尔、JSON',
   `type` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'cn' COMMENT '类型',
-  `lang` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT 'cn' COMMENT '多语言',
+  `lang` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'cn' COMMENT '多语言',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -108,10 +108,10 @@ INSERT INTO `ms_configs` VALUES ('28', '2019-10-11 03:21:50', '2019-10-16 08:33:
 DROP TABLE IF EXISTS `ms_failed_jobs`;
 CREATE TABLE `ms_failed_jobs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -126,7 +126,7 @@ CREATE TABLE `ms_failed_jobs` (
 DROP TABLE IF EXISTS `ms_migrations`;
 CREATE TABLE `ms_migrations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -146,8 +146,8 @@ INSERT INTO `ms_migrations` VALUES ('6', '2019_09_30_113148_column_table', '1');
 -- ----------------------------
 DROP TABLE IF EXISTS `ms_password_resets`;
 CREATE TABLE `ms_password_resets` (
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   KEY `ms_password_resets_email_index` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -162,27 +162,34 @@ CREATE TABLE `ms_password_resets` (
 DROP TABLE IF EXISTS `ms_templates`;
 CREATE TABLE `ms_templates` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '名称',
-  `class` smallint(5) unsigned DEFAULT NULL COMMENT '类型',
-  `model` smallint(5) unsigned DEFAULT NULL COMMENT '模型',
-  `type` smallint(5) unsigned DEFAULT NULL COMMENT '类别',
-  `theme` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT 'default' COMMENT '主题',
-  `path` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '路径',
-  `remark` text COLLATE utf8mb4_unicode_ci COMMENT '备注',
-  `lang` varchar(4) COLLATE utf8mb4_unicode_ci DEFAULT 'en' COMMENT '语言',
+  `name` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '名称',
+  `class` smallint(5) unsigned DEFAULT '0' COMMENT '类型',
+  `model` smallint(5) unsigned DEFAULT '0' COMMENT '模型',
+  `type` smallint(5) unsigned DEFAULT '0' COMMENT '类别',
+  `theme` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'default' COMMENT '主题',
+  `path` varchar(120) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '路径',
+  `remark` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci COMMENT '备注',
+  `lang` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'en' COMMENT '语言',
   `updated_at` timestamp NULL DEFAULT NULL COMMENT '更新时间',
   `created_at` timestamp NULL DEFAULT NULL COMMENT '创建时间',
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- ----------------------------
 -- Records of ms_templates
 -- ----------------------------
-INSERT INTO `ms_templates` VALUES ('1', 'list', '1', '1', '1', 'default', 'home/default/cn/article/list/list.blade.php', '默认文章列表-测试', 'cn', '2019-10-18 15:44:15', '2019-10-16 17:43:09');
-INSERT INTO `ms_templates` VALUES ('2', 'list', '1', '2', '1', 'default', 'home/default/cn/product/list/list.blade.php', '默认产品列表', 'cn', '2019-10-17 13:45:26', '2019-10-17 13:45:26');
-INSERT INTO `ms_templates` VALUES ('3', 'about_us', '0', '5', '1', 'default', 'home/default/cn/single/about_us.blade.php', '关于我们', 'cn', '2019-10-17 17:15:18', '2019-10-17 13:46:40');
-INSERT INTO `ms_templates` VALUES ('4', 'contact_us', '0', '5', '1', 'default', 'home/default/cn/single/contact_us.blade.php', '联系我们', 'cn', '2019-10-17 17:12:44', '2019-10-17 13:50:15');
-INSERT INTO `ms_templates` VALUES ('5', 'list', '1', '3', '1', 'default', 'home/default/cn/image/list/list.blade.php', '默认图片列表', 'cn', '2019-10-18 17:05:11', '2019-10-18 17:05:11');
+INSERT INTO `ms_templates` VALUES ('1', 'list', '1', '1', '1', 'default', 'home/default/cn/article/list/list.blade.php', '默认文章列表-测试', 'cn', '2019-10-19 15:51:06', '2019-10-16 17:43:09', null);
+INSERT INTO `ms_templates` VALUES ('2', 'list', '1', '2', '1', 'default', 'home/default/cn/product/list/list.blade.php', '默认产品列表', 'cn', '2019-10-19 15:51:06', '2019-10-17 13:45:26', null);
+INSERT INTO `ms_templates` VALUES ('3', 'about_us', '0', '5', '1', 'default', 'home/default/cn/single/about_us.blade.php', '关于我们', 'cn', '2019-10-19 15:51:06', '2019-10-17 13:46:40', null);
+INSERT INTO `ms_templates` VALUES ('4', 'contact_us', '0', '5', '1', 'default', 'home/default/cn/single/contact_us.blade.php', '联系我们', 'cn', '2019-10-19 15:51:06', '2019-10-17 13:50:15', null);
+INSERT INTO `ms_templates` VALUES ('5', 'list', '1', '3', '1', 'default', 'home/default/cn/image/list/list.blade.php', '默认图片列表', 'cn', '2019-10-19 15:51:06', '2019-10-18 17:05:11', null);
+INSERT INTO `ms_templates` VALUES ('6', 'public', '0', '0', '2', 'default', 'css/default/cn/public.css', '公共样式', 'cn', '2019-10-19 15:51:06', '2019-10-18 18:11:30', null);
+INSERT INTO `ms_templates` VALUES ('7', 'index', '0', '0', '2', 'default', 'css/default/cn/index.css', '首页样式', 'cn', '2019-10-19 15:51:06', '2019-10-18 18:11:58', null);
+INSERT INTO `ms_templates` VALUES ('8', 'list', '0', '0', '2', 'default', 'css/default/cn/list.css', '列表样式', 'cn', '2019-10-19 15:51:06', '2019-10-19 11:22:15', null);
+INSERT INTO `ms_templates` VALUES ('11', 'public', '0', '0', '3', 'default', 'js/default/cn/public.js', null, 'cn', '2019-10-19 15:51:06', '2019-10-19 11:30:42', null);
+INSERT INTO `ms_templates` VALUES ('12', 'index', '0', '0', '2', 'default', 'css/default/en/index.css', null, 'en', '2019-10-19 15:51:06', '2019-10-19 11:31:50', null);
+INSERT INTO `ms_templates` VALUES ('13', 'public', '0', '0', '3', 'default', 'js/default/en/public.js', null, 'en', '2019-10-19 15:51:06', '2019-10-19 11:32:04', null);
 
 -- ----------------------------
 -- Table structure for ms_users
@@ -190,11 +197,11 @@ INSERT INTO `ms_templates` VALUES ('5', 'list', '1', '3', '1', 'default', 'home/
 DROP TABLE IF EXISTS `ms_users`;
 CREATE TABLE `ms_users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `remember_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),

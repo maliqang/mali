@@ -17,9 +17,11 @@
 namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Templates extends Model
 {
+    use SoftDeletes;
     /**获取模型
      * @param $value
      * @return mixed
