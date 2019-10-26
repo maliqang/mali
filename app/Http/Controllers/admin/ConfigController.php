@@ -36,6 +36,19 @@ class ConfigController extends AdminController
      */
     public function update(Request $request,Configs $configs){
 
+        $validatedData = $request->validate(
+            [
+                'wechat'=>'image|size:1024',
+                'logo'=>"image|size:1024"
+            ],
+            [
+                'wechat.image'=>"必须是jpeg, png, bmp, gif, svg图片格式",
+                'logo.image'=>"必须是jpeg, png, bmp, gif, svg图片格式",
+                'wechat.size'=>"图片不能大于1024KB",
+                'logo.size'=>"图片不能大于1024KB"
+            ]
+        );
+
           $config=$request->post();
           foreach ($config as $k=>$v){
               $configs->where(['key'=>$k])->update(['value'=>$v]);
@@ -44,7 +57,7 @@ class ConfigController extends AdminController
 
         //LOGO 上传
         if ($request->hasFile('logo')) {
-            $logo_path = $request->file("logo")->store('system', "public");
+            $logo_path = $request->file("logo")->store('image/system', "public");
             $configs->where(['key' => 'logo'])->update(['value' => "/" . $logo_path]);
 
         }
@@ -52,7 +65,7 @@ class ConfigController extends AdminController
 
         // 公从号上传
         if ($request->hasFile('wechat')) {
-            $wechat_path = $request->file("wechat")->store('system', "public");
+            $wechat_path = $request->file("wechat")->store('image/system', "public");
             $configs->where(['key' => 'wechat'])->update(['value' => "/" . $wechat_path]);
         }
 

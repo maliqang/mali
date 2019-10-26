@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link rel="Bookmark" href="/favicon.ico" >
     <link rel="Shortcut Icon" href="/favicon.ico" />
-
+    <meta name="robots" content="noindex, nofollow">   <!-- 不允许收录 -->
     <link rel="stylesheet" type="text/css" href="/node_modules/H-ui/static/h-ui/css/H-ui.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/H-ui/static/h-ui.admin/css/H-ui.admin.css" />
     <link rel="stylesheet" type="text/css" href="/node_modules/H-ui/lib/Hui-iconfont/1.0.8/iconfont.css" />

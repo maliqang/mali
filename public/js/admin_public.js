@@ -11,7 +11,17 @@ $(function(){
         index:0
     });
 
-
+    $('.table-sort').dataTable({
+        "aaSorting": [[ 1, "desc" ]],//默认第几个排序
+        "bStateSave": true,//状态保存
+        'searching': false,
+        "info": false,
+        "paging":false,
+        "aoColumnDefs": [
+            //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+            {"orderable":false,"aTargets":[]}// 不参与排序的列
+        ]
+    });
 });
 //建立一個可存取到該file的url
 function getObjectURL(file) {
@@ -64,7 +74,21 @@ $(function(){
         }
     })
 
+    // 通用
+    $("#pic").change(function(){
+        if($.support.msie){
+            $("#img").attr("src",$(this).val())
+            $("#info").text("当前选择的文件:"+$(this).val())
+        }else{
+            $("#info").text("当前选择的文件:"+$(this).val())
+            var objUrl=getObjectURL(this.files[0]);
+            console.log("objUrl="+objUrl);
+            if(objUrl){
+                $("#img").attr("src",objUrl);
 
+            }
+        }
+    })
 
 });
 
@@ -100,4 +124,46 @@ function destroy(obj,url) {
             },
         });
     });
+}
+
+
+
+
+//排序
+function sort(url) {
+    $(".sort").change(function () {
+        sort=$(this).val()
+        id=$(this).attr('column')
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: {'id': id, "sort": sort},
+            dataType: 'json',
+            success:function (data) {
+            }
+        })
+    })
+}
+
+
+//反转布尔值
+
+function convert_cloth(obj,url,id) {
+    if($(obj).find('span').hasClass('btn-danger')){
+        $(obj).find('span').removeClass("btn-danger").addClass("btn-default").html('YES')
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: {'id': id, "value": 1},
+            dataType: 'json',
+        })
+    }else{
+        $(obj).find('span').removeClass("btn-default").addClass("btn-danger").html('NO')
+        $.ajax({
+            type: 'get',
+            url: url,
+            data: {'id': id, "value": 0},
+            dataType: 'json',
+        })
+    }
 }

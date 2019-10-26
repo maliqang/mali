@@ -40,6 +40,20 @@ Route::prefix('admin')->name("admin.")->middleware('auth')->group(function (){
     Route::post("/template/store_js",'Admin\TemplateController@storeJs')->name('template.store.js');
     Route::post("/template/update_file",'Admin\TemplateController@updateFile')->name('template.update.file');
     Route::get("/template/destroy/{id}","Admin\TemplateController@destroy")->name("template.destroy");
+    Route::get('/template/response_model_blade','Admin\TemplateController@responseModelBlade')->name('template.model_blade')->where(['model' => '[0-9]+']);
+    //栏目
+    Route::get('/column',"Admin\ColumnController@index")->name('column');
+    Route::get('/column/create',"Admin\ColumnController@create")->name('column.create');
+    Route::post('/column/store',"Admin\ColumnController@store")->name('column.store');
+    Route::get('/column/edit/{id}',"Admin\ColumnController@edit")->name('column.edit');
+    Route::post('/column/update/{id}',"Admin\ColumnController@update")->name('column.update');
+    Route::get('/column/create_son',"Admin\ColumnController@createSon")->name('column.create_son');
+    Route::get('/column/create_content/{id}',"Admin\ColumnController@createContent")->name('column.create_content');
+    Route::get('/column/destroy/{id}','Admin\ColumnController@destroy')->name('column.destroy');
+    Route::get('/column/sort','Admin\ColumnController@sort')->name('column.sort');
+    Route::get('/column/status','Admin\ColumnController@status')->name('column.status');
+    Route::get('/column/is_nav','Admin\ColumnController@isNav')->name('column.is_nav');
+    Route::post('column/update/{id}','Admin\ColumnController@update')->name('column.update');
 
 
 });

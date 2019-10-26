@@ -18,9 +18,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\model\Templates;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use PhpMyAdmin\Response;
+
 
 
 class TemplateController extends AdminController
@@ -309,8 +308,13 @@ class TemplateController extends AdminController
         if($result->delete()){
             $msg=['status'=>1,"result"=>"已删除"];
         }else{
-            $msg=['status'=>0,"result"=>"权限不足"];
+            $msg=['status'=>0,"result"=>"删除失败"];
         }
         return response()->json($msg);
     }
+
+    public function responseModelBlade(Request $request,Templates $templatesModel){
+        return response()->json($templatesModel->getBladeModelList($request->get("model"),$this->admin_lang));
+    }
+
 }

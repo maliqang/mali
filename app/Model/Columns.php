@@ -10,22 +10,26 @@
 // +----------------------------------------------------------------------
 // | Author: mali
 // +----------------------------------------------------------------------
-// | Date time: 2019/9/30 16:09
+// | Date time: 2019/10/19 16:09
 // +----------------------------------------------------------------------
-// | purpose: 模板
+// | purpose: 栏目
 // +----------------------------------------------------------------------
 namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Templates extends Model
+class Columns extends Model
 {
     use SoftDeletes;
-    /**获取模型
-     * @param $value
-     * @return mixed
-     */
+    public function getAllTree($lang="cn",$status=null){
+        if($status!=null){
+            $column=$this->where(['lang'=>$lang,'status'=>$status])->select(['id','pid','name','status','updated_at','is_nav','sort'])->get()->toArray();
+        }else{
+            $column=$this->where(['lang'=>$lang])->get()->toArray();
+        }
+        return get_tree($column);
+    }
     public function  getModelAttribute($value){
         $model=[
             0=>"",
@@ -39,43 +43,8 @@ class Templates extends Model
 
         return $model[$value];
     }
-
-    /**获取分类
-     * @param $value
-     * @return mixed
-     */
-    public function getClassAttribute($value){
-        $data=[
-            0=>"",
-            1=>"列表",
-            2=>"详情",
-            3=>"频道",
-        ];
-
-        return $data[$value];
-    }
-
-    /**根据模型获取模板列表
-     * @param $model
-     * @param int $class
-     * @param string $lang
-     * @return mixed
-     */
-    public function getBladeModelList($model,$lang='cn'){
-      return  $this->where(['model'=>$model,"lang"=>$lang,"type"=>1,])->select(['id','name','path','class','model'])->get();
-    }
-
-
-
-    public function getCreatedAtAttribute($value)
-    {
-        return date('Y-m-d H:i', strtotime($value));
-    }
-
     public function getUpdatedAtAttribute($value)
     {
         return date('Y-m-d H:i', strtotime($value));
     }
-
-
 }

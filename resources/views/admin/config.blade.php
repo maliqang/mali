@@ -107,6 +107,11 @@
                                  <a href="javascript:void();" style="width: 100px" class="btn btn-default"><i class="Hui-iconfont"></i> 浏览文件</a>
                                  <input type="file" multiple="" id="logo1" name="logo" value="" class="input-file ">
                                 </span>
+                                @if ($errors->any())
+                                    @foreach ($errors->get('logo') as $error)
+                                        <p class="c-red size-S">{{ $error }}</p>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
                         <div class="row cl">
@@ -118,6 +123,11 @@
                                  <a href="javascript:void();" style="width: 100px" class="btn btn-default"><i class="Hui-iconfont"></i> 浏览文件</a>
                                 <input type="file" multiple="" id="wechat1" name="wechat" value="" class="input-file ">
                                 </span>
+                                @if ($errors->any())
+                                    @foreach ($errors->get('wechat') as $error)
+                                        <p class="c-red size-S">{{ $error }}</p>
+                                    @endforeach
+                                @endif
                             </div>
                         </div>
 
