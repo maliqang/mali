@@ -55,5 +55,14 @@ Route::prefix('admin')->name("admin.")->middleware('auth')->group(function (){
     Route::get('/column/is_nav','Admin\ColumnController@isNav')->name('column.is_nav');
     Route::post('column/update/{id}','Admin\ColumnController@update')->name('column.update');
 
+    //文章
+    Route::get('/article','Admin\ArticleController@index"')->name('article');
+
+    //文章分类
+    Route::get('/article_class','Admin\ArticleClassController@index"')->name('article_class');
+
+
+    //文章位置
+    Route::get('/article_position','Admin\ArticlePositionController@index"')->name('article_position');
 
 });
